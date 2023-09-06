@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>HAS CONFIRMADO TU ASISTENCIA</h1>
+<div class="button-container">
+                <form method="post" name="" action="{% url 'notificacion2' %}">
+                    {% csrf_token %}
+                    <input type="hidden" id="id_voluntario" name="id_voluntario" value="{{ voluntario.id }}">
+                    <input type="hidden" id="regresar" name="regresar" value="regresar">
+                    <button type="submit" class="accept-button" value="confirmar">Regresar</button>
+                </form>
+            </div>
+</body>
+</html>

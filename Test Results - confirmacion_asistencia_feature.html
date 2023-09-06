@@ -572,9 +572,9 @@ jQuery.cookie = function(name, value, options) {
     <body>
         <div id="container">
             <div id="header">
-                <div class="time" xmlns="">636 ms</div>
+                <div class="time" xmlns="">4.49 s</div>
                 <h1>
-                    confirmacion_asistencia.feature: <strong><span class="total" xmlns="http://www.w3.org/1999/xhtml">5 total, </span><span class="failed">1 failed, </span><span class="ignored">2 ignored, </span><span class="passed">2 passed</span></strong>
+                    confirmacion_asistencia.feature: <strong><span class="total" xmlns="http://www.w3.org/1999/xhtml">8 total, </span><span class="passed">8 passed</span></strong>
                 </h1>
                 <div id="treecontrol">
                     <ul>
@@ -591,45 +591,82 @@ jQuery.cookie = function(name, value, options) {
             </div>
             <div id="content">
                 <ul id="tree">
-                    <li xmlns="" class="level top failed open">
+                    <li xmlns="" class="level top open">
                         <span><em class="time">
-                                <div class="time">636 ms</div>
+                                <div class="time">4.49 s</div>
                             </em>Confirmaci&oacute;n de asistencia de voluntario en emergencia m&eacute;dica</span>
                         <ul>
-                            <li class="level suite failed open">
+                            <li class="level suite open">
                                 <span><em class="time">
-                                        <div class="time">636 ms</div>
+                                        <div class="time">1.50 s</div>
                                     </em>Confirmaci&oacute;n de asistencia de voluntarios en emergencia m&eacute;dica -- @1.1 Confirmar Asistencia Parcial</span>
                                 <ul>
                                     <li class="level test">
                                         <span><em class="time">
-                                                <div class="time">633 ms</div>
-                                            </em><em class="status">passed</em>Dado que se tiene el grupo de '5' voluntarios</span>
+                                                <div class="time">796 ms</div>
+                                            </em><em class="status">passed</em>Dado que se tiene el grupo de '5' voluntario y se requiere '3' voluntarios para la emergencia m&eacute;dica</span>
+                                    </li>
+                                    <li class="level test">
+                                        <span><em class="time">
+                                                <div class="time">0 ms</div>
+                                            </em><em class="status">passed</em>Cuando se notifica la emergencia m&eacute;dica a este grupo</span>
+                                        <ul>
+                                            <li class="text">
+                                                <span class="stdout">Jose de Cuervo <br/>Alias iste beatae enim quo consequuntur exercitationem. <br/>Estimado Toribio, se solicita su presencia en Navarra a las 09:32:00<br/>Jose de Cuervo <br/>Alias iste beatae enim quo consequuntur exercitationem. <br/>Estimado Cecilio, se solicita su presencia en Navarra a las 09:32:00<br/>Jose de Cuervo <br/>Alias iste beatae enim quo consequuntur exercitationem. <br/>Estimado Micaela, se solicita su presencia en Navarra a las 09:32:00<br/>Jose de Cuervo <br/>Alias iste beatae enim quo consequuntur exercitationem. <br/>Estimado Ángel, se solicita su presencia en Navarra a las 09:32:00<br/>Jose de Cuervo <br/>Alias iste beatae enim quo consequuntur exercitationem. <br/>Estimado Máximo, se solicita su presencia en Navarra a las 09:32:00<br/></span>
+                                            </li>
+                                        </ul>
                                     </li>
                                     <li class="level test">
                                         <span><em class="time">
                                                 <div class="time">1 ms</div>
-                                            </em><em class="status">passed</em>Cuando se notifica la emergencia m&eacute;dica a este grupo</span>
+                                            </em><em class="status">passed</em>Y el numero de voluntarios que confirmaron su asistencia es '3'</span>
                                     </li>
-                                    <li class="level test failed open">
+                                    <li class="level test">
                                         <span><em class="time">
-                                                <div class="time">2 ms</div>
-                                            </em><em class="status">failed</em>Y el numero de voluntarios que confirmaron su asistencia es '5'</span>
+                                                <div class="time">702 ms</div>
+                                            </em><em class="status">passed</em>Entonces el n&uacute;mero de voluntarios que atender&aacute;n la emergencia es '3'</span>
                                         <ul>
                                             <li class="text">
-                                                <span class="stderr">Traceback (most recent call last):<br/>  File "D:\GitHub\Sistema-de-Gestion-de-Horarios-y-Notificaciones\venv\Lib\site-packages\behave\model.py", line 1329, in run<br/>    match.run(runner.context)<br/>  File "D:\GitHub\Sistema-de-Gestion-de-Horarios-y-Notificaciones\venv\Lib\site-packages\behave\matchers.py", line 98, in run<br/>    self.func(context, *args, **kwargs)<br/>  File "gestion_voluntarios\tests\steps\confirmacion_asistencia.py", line 90, in step_impl<br/>    assert numero_confirmados == context.numero_confirmados<br/>           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^<br/>AssertionError<br/></span>
+                                                <span class="stdout">Toribio<br/>Cecilio<br/>Micaela<br/></span>
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="level test ignored open">
+                                </ul>
+                            </li>
+                            <li class="level suite open">
+                                <span><em class="time">
+                                        <div class="time">2.99 s</div>
+                                    </em>Confirmaci&oacute;n de asistencia de voluntarios en emergencia m&eacute;dica -- @1.2 Confirmar Asistencia Parcial</span>
+                                <ul>
+                                    <li class="level test">
                                         <span><em class="time">
-                                                <div class="time">0 ms</div>
-                                            </em><em class="status">ignored</em>Y el numero de voluntarios que rechazaron la emergencia es '0'</span>
+                                                <div class="time">1.41 s</div>
+                                            </em><em class="status">passed</em>Dado que se tiene el grupo de '10' voluntario y se requiere '5' voluntarios para la emergencia m&eacute;dica</span>
                                     </li>
-                                    <li class="level test ignored open">
+                                    <li class="level test">
                                         <span><em class="time">
                                                 <div class="time">0 ms</div>
-                                            </em><em class="status">ignored</em>Entonces el n&uacute;mero de voluntarios que atender&aacute;n la emergencia es '5'</span>
+                                            </em><em class="status">passed</em>Cuando se notifica la emergencia m&eacute;dica a este grupo</span>
+                                        <ul>
+                                            <li class="text">
+                                                <span class="stdout">Eufemia Quintanilla Bolaños <br/>Ad est quod veritatis odit. <br/>Estimado Tania, se solicita su presencia en Girona a las 08:20:00<br/>Eufemia Quintanilla Bolaños <br/>Ad est quod veritatis odit. <br/>Estimado Diana, se solicita su presencia en Girona a las 08:20:00<br/>Eufemia Quintanilla Bolaños <br/>Ad est quod veritatis odit. <br/>Estimado Pelayo, se solicita su presencia en Girona a las 08:20:00<br/>Eufemia Quintanilla Bolaños <br/>Ad est quod veritatis odit. <br/>Estimado Silvestre, se solicita su presencia en Girona a las 08:20:00<br/>Eufemia Quintanilla Bolaños <br/>Ad est quod veritatis odit. <br/>Estimado Paloma, se solicita su presencia en Girona a las 08:20:00<br/>Eufemia Quintanilla Bolaños <br/>Ad est quod veritatis odit. <br/>Estimado Lola, se solicita su presencia en Girona a las 08:20:00<br/>Eufemia Quintanilla Bolaños <br/>Ad est quod veritatis odit. <br/>Estimado Juan, se solicita su presencia en Girona a las 08:20:00<br/>Eufemia Quintanilla Bolaños <br/>Ad est quod veritatis odit. <br/>Estimado Natanael, se solicita su presencia en Girona a las 08:20:00<br/>Eufemia Quintanilla Bolaños <br/>Ad est quod veritatis odit. <br/>Estimado Jose Carlos, se solicita su presencia en Girona a las 08:20:00<br/>Eufemia Quintanilla Bolaños <br/>Ad est quod veritatis odit. <br/>Estimado Berta, se solicita su presencia en Girona a las 08:20:00<br/></span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="level test">
+                                        <span><em class="time">
+                                                <div class="time">16 ms</div>
+                                            </em><em class="status">passed</em>Y el numero de voluntarios que confirmaron su asistencia es '5'</span>
+                                    </li>
+                                    <li class="level test">
+                                        <span><em class="time">
+                                                <div class="time">1.57 s</div>
+                                            </em><em class="status">passed</em>Entonces el n&uacute;mero de voluntarios que atender&aacute;n la emergencia es '5'</span>
+                                        <ul>
+                                            <li class="text">
+                                                <span class="stdout">Tania<br/>Diana<br/>Pelayo<br/>Silvestre<br/>Paloma<br/></span>
+                                            </li>
+                                        </ul>
                                     </li>
                                 </ul>
                             </li>
@@ -639,7 +676,7 @@ jQuery.cookie = function(name, value, options) {
             </div>
         </div>
         <div id="footer">
-            <p>Generated by PyCharm on 3/7/23, 9:36 PM</p>
+            <p>Generated by PyCharm on 3/10/23, 8:34 AM</p>
         </div>
     </body>
 </html>

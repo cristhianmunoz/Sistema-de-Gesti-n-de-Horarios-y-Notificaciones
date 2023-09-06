@@ -1,29 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="../static/templates/gestion_voluntarios/notificacion.css">
-    <title>Notificación de emergencia médica</title>
-</head>
-<body>
-    <div class="notification">
-        <h1>{{ Emergencia }}</h1>
-        <!--p>Se ha detectado una emergencia médica en el siguiente paciente:</p-->
-        <!--ul>
-            <li>Nombre: {{ paciente.nombre }}</li>
-            <li>Edad: {{ paciente.edad }}</li>
-            <li>Síntomas: {{ paciente.sintomas }}</li>
-        </ul-->
-        <h1>Emergencia: {{ emergencia.nombre }} </h1>
-        <h1>Habilidad requerida: {{ emergencia.habilidad_requerida}} </h1>
-        <h1>Asunto: {{ emergencia.asunto }}</h1>
-        <p>SELECCIONE UNA OPCIÓN</p>
+{% load static %}
+{% block content %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+              crossorigin="anonymous">
+        <!-- Bootstrap Font Icon CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+        <!-- My Styles -->
+        <link
+        <link rel="stylesheet" href="{% static 'notificacion_styles.css' %}">
+        <title>Notificaciones</title>
+    </head>
+    <body>
+    {% for emergencia in emergencias %}
+        <div class="notification">
 
-        <form method="post">
-            <!--{% csrf_token %}-->
-            <button type="submit" name="opcion" class="conf" value="confirmar">Confirmar</button>
-            <button type="submit" name="opcion" class="rech" value="rechazar">Rechazar</button>
-        </form>
-    </div>
-</body>
-</html>
+            <h2><b>{{ emergencia.nombre }}</b></h2>
+            <br>
+            Asunto: {{ emergencia.asunto }}
+            <br>
+            Dirección: {{ emergencia.ubicacion }}
+            <div class="button-container">
+                <form method="post" name="" action="{% url 'confirmar_emergencia' %}">
+                    {% csrf_token %}
+                    <input type="hidden" id="id_voluntario" name="id_voluntario" value="{{ voluntario.id }}">
+
+                    <input type="hidden" id="confirmacion" name="confirmacion" value="confirmar">
+                    <button type="submit" class="accept-button" value="confirmar">Confirmar</button>
+                </form>
+                <form method="post" name="" action="{% url 'notificacion3' %}">
+                    {% csrf_token %}
+                    <input type="hidden" id="id_voluntario" name="id_voluntario" value="{{ voluntario.id }}">
+                    <input type="hidden" id="id_emergencia" name="id_emergencia" value="{{ emergencia.id }}">
+                    <input type="hidden" id="rechazo" name="rechazo" value="rechazar">
+                    <button type="submit" class="reject-button" value="rechazar">Rechazar</button>
+                </form>
+
+            </div>
+
+
+        </div>
+    {% endfor %}
+    </body>
+    </html>
+{% endblock %}

@@ -572,9 +572,9 @@ jQuery.cookie = function(name, value, options) {
     <body>
         <div id="container">
             <div id="header">
-                <div class="time" xmlns="">3 ms</div>
+                <div class="time" xmlns="">4.07 s</div>
                 <h1>
-                    confirmacion_asistencia.feature:Confirmaci&oacute;n de asistencia de voluntarios en emergencia m&eacute;dica: <strong><span class="total" xmlns="http://www.w3.org/1999/xhtml">6 total, </span><span class="passed">6 passed</span></strong>
+                    confirmacion_asistencia.feature:Confirmaci&oacute;n de asistencia de voluntarios en emergencia m&eacute;dica: <strong><span class="total" xmlns="http://www.w3.org/1999/xhtml">8 total, </span><span class="passed">8 passed</span></strong>
                 </h1>
                 <div id="treecontrol">
                     <ul>
@@ -593,43 +593,80 @@ jQuery.cookie = function(name, value, options) {
                 <ul id="tree">
                     <li xmlns="" class="level top open">
                         <span><em class="time">
-                                <div class="time">3 ms</div>
+                                <div class="time">4.07 s</div>
                             </em>Confirmaci&oacute;n de asistencia de voluntario en emergencia m&eacute;dica</span>
                         <ul>
                             <li class="level suite open">
                                 <span><em class="time">
-                                        <div class="time">3 ms</div>
+                                        <div class="time">1.50 s</div>
                                     </em>Confirmaci&oacute;n de asistencia de voluntarios en emergencia m&eacute;dica -- @1.1 Confirmar Asistencia Parcial</span>
                                 <ul>
                                     <li class="level test">
                                         <span><em class="time">
-                                                <div class="time">1 ms</div>
-                                            </em><em class="status">passed</em>Dado que se tiene el grupo de voluntarios conformado por 'Juan P&eacute;rez, Pepe Rodr&iacute;guez, Tom&aacute;s Muenala, Ana Freire, Gerardo Zapata'</span>
-                                    </li>
-                                    <li class="level test">
-                                        <span><em class="time">
-                                                <div class="time">1 ms</div>
-                                            </em><em class="status">passed</em>Cuando se notifica la emergencia m&eacute;dica a '5' personas</span>
+                                                <div class="time">756 ms</div>
+                                            </em><em class="status">passed</em>Dado que se tiene el grupo de '5' voluntario y se requiere '3' voluntarios para la emergencia m&eacute;dica</span>
                                     </li>
                                     <li class="level test">
                                         <span><em class="time">
                                                 <div class="time">0 ms</div>
+                                            </em><em class="status">passed</em>Cuando se notifica la emergencia m&eacute;dica a este grupo</span>
+                                        <ul>
+                                            <li class="text">
+                                                <span class="stdout">Fernando Castrillo Aller <br/>Nemo officiis itaque. <br/>Estimado Ibán, se solicita su presencia en Barcelona a las 09:49:00<br/>Fernando Castrillo Aller <br/>Nemo officiis itaque. <br/>Estimado Ruth, se solicita su presencia en Barcelona a las 09:49:00<br/>Fernando Castrillo Aller <br/>Nemo officiis itaque. <br/>Estimado Felisa, se solicita su presencia en Barcelona a las 09:49:00<br/>Fernando Castrillo Aller <br/>Nemo officiis itaque. <br/>Estimado Jose Ignacio, se solicita su presencia en Barcelona a las 09:49:00<br/>Fernando Castrillo Aller <br/>Nemo officiis itaque. <br/>Estimado Marino, se solicita su presencia en Barcelona a las 09:49:00<br/></span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="level test">
+                                        <span><em class="time">
+                                                <div class="time">1 ms</div>
                                             </em><em class="status">passed</em>Y el numero de voluntarios que confirmaron su asistencia es '3'</span>
                                     </li>
                                     <li class="level test">
                                         <span><em class="time">
-                                                <div class="time">1 ms</div>
-                                            </em><em class="status">passed</em>Y el numero de voluntarios que rechazaron la emergencia es '2'</span>
-                                    </li>
-                                    <li class="level test">
-                                        <span><em class="time">
-                                                <div class="time">0 ms</div>
+                                                <div class="time">738 ms</div>
                                             </em><em class="status">passed</em>Entonces el n&uacute;mero de voluntarios que atender&aacute;n la emergencia es '3'</span>
+                                        <ul>
+                                            <li class="text">
+                                                <span class="stdout">Ibán<br/>Ruth<br/>Felisa<br/></span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="level suite open">
+                                <span><em class="time">
+                                        <div class="time">2.57 s</div>
+                                    </em>Confirmaci&oacute;n de asistencia de voluntarios en emergencia m&eacute;dica -- @1.2 Confirmar Asistencia Parcial</span>
+                                <ul>
+                                    <li class="level test">
+                                        <span><em class="time">
+                                                <div class="time">1.36 s</div>
+                                            </em><em class="status">passed</em>Dado que se tiene el grupo de '10' voluntario y se requiere '5' voluntarios para la emergencia m&eacute;dica</span>
                                     </li>
                                     <li class="level test">
                                         <span><em class="time">
-                                                <div class="time">0 ms</div>
-                                            </em><em class="status">passed</em>Y los voluntarios asignados a esta emergencia son 'Juan P&eacute;rez, Pepe Rodr&iacute;guez, Tom&aacute;s Muenala'</span>
+                                                <div class="time">1 ms</div>
+                                            </em><em class="status">passed</em>Cuando se notifica la emergencia m&eacute;dica a este grupo</span>
+                                        <ul>
+                                            <li class="text">
+                                                <span class="stdout">Tania Ayuso-Tirado <br/>Illum accusantium voluptatibus enim molestias aut minus. <br/>Estimado Dora, se solicita su presencia en Zaragoza a las 08:55:00<br/>Tania Ayuso-Tirado <br/>Illum accusantium voluptatibus enim molestias aut minus. <br/>Estimado Leopoldo, se solicita su presencia en Zaragoza a las 08:55:00<br/>Tania Ayuso-Tirado <br/>Illum accusantium voluptatibus enim molestias aut minus. <br/>Estimado Marcelino, se solicita su presencia en Zaragoza a las 08:55:00<br/>Tania Ayuso-Tirado <br/>Illum accusantium voluptatibus enim molestias aut minus. <br/>Estimado Lorenza, se solicita su presencia en Zaragoza a las 08:55:00<br/>Tania Ayuso-Tirado <br/>Illum accusantium voluptatibus enim molestias aut minus. <br/>Estimado Felipe, se solicita su presencia en Zaragoza a las 08:55:00<br/>Tania Ayuso-Tirado <br/>Illum accusantium voluptatibus enim molestias aut minus. <br/>Estimado Edu, se solicita su presencia en Zaragoza a las 08:55:00<br/>Tania Ayuso-Tirado <br/>Illum accusantium voluptatibus enim molestias aut minus. <br/>Estimado Sandalio, se solicita su presencia en Zaragoza a las 08:55:00<br/>Tania Ayuso-Tirado <br/>Illum accusantium voluptatibus enim molestias aut minus. <br/>Estimado Yésica, se solicita su presencia en Zaragoza a las 08:55:00<br/>Tania Ayuso-Tirado <br/>Illum accusantium voluptatibus enim molestias aut minus. <br/>Estimado Rosalva, se solicita su presencia en Zaragoza a las 08:55:00<br/>Tania Ayuso-Tirado <br/>Illum accusantium voluptatibus enim molestias aut minus. <br/>Estimado Mateo, se solicita su presencia en Zaragoza a las 08:55:00<br/></span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="level test">
+                                        <span><em class="time">
+                                                <div class="time">1 ms</div>
+                                            </em><em class="status">passed</em>Y el numero de voluntarios que confirmaron su asistencia es '5'</span>
+                                    </li>
+                                    <li class="level test">
+                                        <span><em class="time">
+                                                <div class="time">1.21 s</div>
+                                            </em><em class="status">passed</em>Entonces el n&uacute;mero de voluntarios que atender&aacute;n la emergencia es '5'</span>
+                                        <ul>
+                                            <li class="text">
+                                                <span class="stdout">Dora<br/>Leopoldo<br/>Marcelino<br/>Lorenza<br/>Felipe<br/></span>
+                                            </li>
+                                        </ul>
                                     </li>
                                 </ul>
                             </li>
@@ -639,7 +676,7 @@ jQuery.cookie = function(name, value, options) {
             </div>
         </div>
         <div id="footer">
-            <p>Generated by PyCharm on 3/3/23, 7:28 AM</p>
+            <p>Generated by PyCharm on 3/10/23, 9:04 AM</p>
         </div>
     </body>
 </html>

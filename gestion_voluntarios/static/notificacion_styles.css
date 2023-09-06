@@ -1,0 +1,39 @@
+.notification {
+    width: 400px; /* Ajusta el ancho según tus necesidades */
+    margin: 20px auto 0;/* Centra el div en la página */
+    text-align: center; /* Centra el contenido dentro del div */
+    background-color: #E0FFFF;
+    border: 2px solid #87CEEB;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #87CEEB;
+    padding: 20px;
+  }
+
+  .button-container {
+      display: flex;
+      margin-top: 10px;
+      justify-content: space-evenly;
+  }
+
+  .accept-button {
+    background-color: #1E90FF;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 40px;
+    cursor: pointer;
+  }
+
+  .reject-button {
+    background-color: transparent;
+    color: #1E90FF;
+    border: 2px solid #1E90FF;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  h2, p, .button-container {
+    text-align: center; /* Centra el contenido */
+  }

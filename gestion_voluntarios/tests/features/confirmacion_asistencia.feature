@@ -1,19 +1,15 @@
 # Created by Cris at 2/23/2023
   # language: es
-Característica: Confirmación de asistencia de voluntario en emergencia médica
-  Como voluntario,
-  quiero confirmar mi asistencia a una emergencia médica
-  para ayudar rápidamente cuando se me necesite.
+Característica: Confirmación de un voluntario a una emergencia médica
+Como voluntario,
+quiero confirmar mi asistencia a una emergencia médica
+para ayudar rápidamente cuando se me necesite.
 
 Esquema del escenario: Confirmación de asistencia de voluntarios en emergencia médica
-  Dado que se tiene el grupo de '<n>' voluntarios
-  Cuando se notifica la emergencia médica a este grupo
-  Y el numero de voluntarios que confirmaron su asistencia es '<numero_confirmados>'
-  Y el numero de voluntarios que rechazaron la emergencia es '<numero_rechazados>'
-  Entonces el número de voluntarios que atenderán la emergencia es '<numero_confirmados>'
+Dado que soy un voluntario y se me han notificado '<num_emergencias>' emergencias
+Cuando confirmo mi asistencia a una emergencia
+Entonces mi estado cambia a '<estado>'
 
-  Ejemplos: Confirmar Asistencia Parcial
-  |n |numero_confirmados|numero_rechazados   |
-  |4 |4                |0                   |
-
-
+Ejemplos: Confirmar Asistencia Parcial
+  |num_emergencias|estado|
+  |       10      |   O  |

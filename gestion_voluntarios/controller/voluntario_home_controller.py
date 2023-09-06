@@ -1,6 +1,9 @@
-from django.shortcuts import render
+from django.contrib import messages
+from django.http import HttpResponse
+from django.shortcuts import render, redirect
 
 from gestion_voluntarios.model.dia_semana_model import DiaSemana
+from gestion_voluntarios.model.emergencia_model import Emergencia
 from gestion_voluntarios.model.habilidad_medica_model import HabilidadMedica
 from gestion_voluntarios.model.habilidad_model import Habilidad
 from gestion_voluntarios.model.periodo_model import Periodo
@@ -50,3 +53,31 @@ def obtener_contexto(id_voluntario):
         'dias_semana': dias_semana,
         'id_horario': horario.id
     }
+
+
+def cambiar_estado(request):
+    print("id_voluntario2", request.POST.get('id_voluntario'))
+    print("opción: ", request.POST.get('confirmacion'))
+    contexto = {}
+    if request.POST.get('confirmacion') == 'confirmar':
+        id_voluntario = request.POST.get('id_voluntario')
+        Voluntario.objects.filter(id=id_voluntario).update(estado='O')
+        contexto = {'voluntario': Voluntario.obtener_voluntario_por_id(id_voluntario)}
+
+    return render(request, 'confirmacion.html', contexto)
+
+def eliminar_emergencia(request):
+    print("RECHAZAR")
+    contexto = {}
+    if request.POST.get('rechazo') == 'rechazar':
+        id_voluntario = request.POST.get('id_voluntario')
+        # Elimina la emergencia que rechaza
+        id_emergencia = request.POST.get('id_emergencia')
+        voluntario = Voluntario.obtener_voluntario_por_id(id_voluntario)
+        emergencia_borrar = Emergencia.objects.get(id=id_emergencia)
+        emergencia_borrar.delete()
+        emergencias = voluntario.get_emergencias()
+        contexto = {'emergencias': emergencias,
+                    'voluntario': Voluntario.obtener_voluntario_por_id(id_voluntario)}
+
+    return render(request, 'notificacion.html', contexto)

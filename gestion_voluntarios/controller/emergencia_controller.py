@@ -6,10 +6,11 @@ from gestion_voluntarios.model.habilidad_model import Habilidad
 from gestion_voluntarios.model.voluntario_model import Voluntario
 from django.shortcuts import redirect
 
+
 def index(request):
     print("Dentro del index")
     context = {}
-    #context.update(get_emergencia(request))
+    # context.update(get_emergencia(request))
     return render(request, 'emergencia_view.html', context)
 
 
@@ -23,7 +24,6 @@ def registrar_emergencia(request):
             habilidad_requerida = request.POST.get('select')
             nume_voluntarios_requeridos = request.POST.get('num_voluntarios')
             descripcion = request.POST.get('descripcion')
-
 
         # Comunicarse con el modelo
         emergencia = Emergencia(
@@ -42,13 +42,14 @@ def registrar_emergencia(request):
 
     # Solicitar voluntarios
 
+
 def cargar_emergencia(request):
     print("Dentro de crear emergencia")
     # Obtener Parametros
     if request.method == 'POST':
         if "solicitar" == request.POST.get('operacion'):
             id_emergencia = request.POST.get('id_emergencia')
-            print('id: ',id_emergencia)
+            print('id: ', id_emergencia)
             emergencia = Emergencia.obtener_emergencia_por_id(id_emergencia)
             voluntariosRegistrados = Voluntario.get_voluntarios()
             voluntarios_seleccionados = solicitar_servicios_voluntarios(voluntariosRegistrados,
@@ -59,7 +60,9 @@ def cargar_emergencia(request):
             else:
                 num_voluntarios_seleccionado = enviar_notificaciones_exitosas(voluntarios_seleccionados)
 
-            context={"num_voluntarios_seleccionados":num_voluntarios_seleccionado, "mensaje":"Solicitud existosa: el número de notificaciones enviadas es de ", "emergencia":emergencia}
+            context = {"num_voluntarios_seleccionados": num_voluntarios_seleccionado,
+                       "mensaje": "Solicitud existosa: el número de notificaciones enviadas es de ",
+                       "emergencia": emergencia}
     return render(request, 'emergencia_view.html', context)
 
 
@@ -68,6 +71,7 @@ def obtener_nombres_voluntario(voluntarios_seleccionados):
     for voluntario in voluntarios_seleccionados:
         nombres_voluntarios_prueba.append(voluntario.nombre)
     return nombres_voluntarios_prueba
+
 
 def solicitar_servicios_voluntarios(voluntarios, emergencia):
     voluntario_seleccionado = []
@@ -82,12 +86,14 @@ def solicitar_servicios_voluntarios(voluntarios, emergencia):
                 break
     return voluntario_seleccionado
 
+
 def voluntarios_seleccionados(voluntarios_ordenados, numero_voluntarios_requeridos):
     voluntarios_seleccionados = []
     for i in range(numero_voluntarios_requeridos):
         voluntarios_seleccionados.append(voluntarios_ordenados)
 
     return voluntarios_seleccionados
+
 
 def enviar_notificaciones(voluntarios_seleccionados):
     aux = 0
@@ -122,7 +128,6 @@ def obtener_voluntarios_finales(voluntarios_seleccionados, voluntarios_requerido
     for voluntario in range(numero_voluntarios_seleccionados):
         voluntarios_finales.append(voluntarios_seleccionados[voluntario])
     return voluntarios_finales
-
 
 
 def enviar_notificaciones_exitosas(voluntarios_seleccionados):

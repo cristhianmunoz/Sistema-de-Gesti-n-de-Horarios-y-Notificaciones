@@ -5,24 +5,24 @@ import django
 from django.db import models
 from django.db import connection
 
-class Emergencia(models.Model):
 
+class Emergencia(models.Model):
     # id = models.CharField(primary_key=True, max_length=50, default='')
     nombre = models.CharField(max_length=50, default='')
     asunto = models.CharField(max_length=200, default='')
     ubicacion = models.CharField(max_length=300, default='')
     hora_entrada = models.CharField(max_length=20, default='')
     num_voluntarios_necesarios = models.IntegerField(default=0)
-    habilidad_requerida = models.TextField(choices=HabilidadMedica.choices, default='')
-    activada = models.BooleanField(default=False)
+    #habilidad_requerida = models.TextField(choices=HabilidadMedica.choices, default='')
+    # activada = models.BooleanField(default=False)
     # debería ser un arreglo de voluntarios
     es_atendida = models.BooleanField(default=False)
-
+    es_enviada = models.BooleanField(default=False)
     id = models.AutoField(primary_key=True)
-    vacantes = models.IntegerField(default=0)
-    habilidad_requerida = models.TextField(choices=HabilidadMedica.choices)
-    lista_priorizada = []
-    lista = []
+    # vacantes = models.IntegerField(default=0)
+    # habilidad_requerida = models.TextField(choices=HabilidadMedica.choices)
+    # lista_priorizada = []
+    # lista = []
 
     def verificar_emergencia(self):
         # Comprobar que todos tengan True
@@ -79,12 +79,11 @@ class Emergencia(models.Model):
         return texto
 
     def imprimir(nombre):
-        print("imprimir: ",nombre)
+        print("imprimir: ", nombre)
         return 0
 
     @staticmethod
     def obtener_emergencia_por_id(id_emergencia):
-
         try:
             emergencia = Emergencia.objects.get(id=id_emergencia)
             return emergencia
@@ -97,6 +96,7 @@ class Emergencia(models.Model):
         for emergencia in emergencias:
             if emergencia.activada == True:
                 return emergencia
+
     def priorizar_voluntarios(self):
         lista_ordenada = [voluntario.horas_experiencia_habilidad(self.habilidad_requerida) for voluntario in self.lista]
         voluntarios_con_habilidad = list(filter(lambda x: x.titulo == self.habilidad_requerida, lista_ordenada))
@@ -111,5 +111,6 @@ class Emergencia(models.Model):
     def obtener_lista_nombres(self):
         lista_priorizada = [habilidad.voluntario for habilidad in self.lista_priorizada]
         return [voluntario.nombre + " " + voluntario.apellido for voluntario in lista_priorizada]
+
     def obtener_lista_voluntarios(self):
         return [habilidad.voluntario for habilidad in self.lista_priorizada]
